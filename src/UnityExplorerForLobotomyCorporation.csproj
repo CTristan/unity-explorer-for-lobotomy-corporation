@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net35</TargetFramework>
+        <OutputPath>..\Release\</OutputPath>
+        <DefineConstants>MONO,STANDALONE</DefineConstants>
+        <OutputType>Library</OutputType>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AllowedReferenceRelatedFileExtensions>none</AllowedReferenceRelatedFileExtensions>
+        <DebugSymbols>false</DebugSymbols>
+        <DebugType>none</DebugType>
+        <Configurations>Release</Configurations>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.34.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net35" Version="1.0.3">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+	<ItemGroup>
+		<Reference Include="mcs">
+			<HintPath>..\lib\packed\mcs.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="MonoMod.Utils">
+			<HintPath>..\lib\packed\MonoMod.Utils.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="MonoMod.RuntimeDetour">
+			<HintPath>..\lib\packed\MonoMod.RuntimeDetour.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Mono.Cecil">
+			<HintPath>..\lib\packed\Mono.Cecil.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Mono.Cecil.Mdb">
+			<HintPath>..\lib\packed\Mono.Cecil.Mdb.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Mono.Cecil.Pdb">
+			<HintPath>..\lib\packed\Mono.Cecil.Pdb.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Mono.Cecil.Rocks">
+			<HintPath>..\lib\packed\Mono.Cecil.Rocks.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Tomlet">
+		  <HintPath>..\lib\packed\Tomlet.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="UnityEngine">
+		  <HintPath>..\lib\unity-publicized\UnityEngine_publicized.dll</HintPath>
+            <Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.AudioModule">
+		  <HintPath>..\lib\unity-publicized\UnityEngine.AudioModule_publicized.dll</HintPath>
+			            <Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+		  <HintPath>..\lib\unity-publicized\UnityEngine.CoreModule_publicized.dll</HintPath>
+            <Private>True</Private>
+		</Reference>
+		<Reference Include="UnityEngine.PhysicsModule">
+		  <HintPath>..\lib\unity-publicized\UnityEngine.PhysicsModule_publicized.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule">
+		  <HintPath>..\lib\unity-publicized\UnityEngine.TextRenderingModule_publicized.dll</HintPath>
+<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+		  <HintPath>..\lib\unity-publicized\UnityEngine.UI_publicized.dll</HintPath>
+            <Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+		  <HintPath>..\lib\unity-publicized\UnityEngine.UIModule_publicized.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+    </ItemGroup>
+	<ItemGroup>
+		<Reference Include="0Harmony">
+      <HintPath>..\external\LobotomyCorp_Data\Managed\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\external\LobotomyCorp_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+	</ItemGroup>
+</Project>
