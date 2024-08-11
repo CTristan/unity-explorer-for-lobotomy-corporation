@@ -6,16 +6,17 @@
   🔍 An in-game UI for exploring, debugging and modifying Unity games.
 </p>
 
-# UnityExplorerKSP
+# UnityExplorerForLobotomyCorporation
 
-This is a fork of [UnityExplorer](https://github.com/sinai-dev/UnityExplorer), modified to work as a standalone Kerbal Space Program plugin : 
-- Uses Harmony instead of HarmonyX
-- Uses a forked version of UniverseLib wich also uses Harmony instead of HarmonyX
-- All dependencies, and notably `Mono.Cecil` are IL-packed and internalized in the assembly to avoid conflicts with the outdated `Mono.Cecil` bundled with KSP.
+This is a fork of [UnityExplorer](https://github.com/sinai-dev/UnityExplorer)
+, modified to work as a mod for Lobotomy Corporation:
+
+- Uses Harmony 1 instead of HarmonyX
+- Moved UniverseLib to inside the project since having UniverseLib for Harmony 1
+  isn't really useful for other projects.
 - Removed unused code (IL2CPP support, bepinex/melon loaders...)
 
-### Dependencies
-- [HarmonyKSP](https://github.com/KSPModdingLibs/HarmonyKSP)
+Original README follows:
 
 # Features
 
