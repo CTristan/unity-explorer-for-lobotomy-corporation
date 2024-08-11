@@ -263,13 +263,23 @@ namespace UnityExplorerForLobotomyCorporation.UniverseLib.UI
 
         private static AssetBundle LoadBundle(string id)
         {
-            var bundle = AssetBundle.LoadFromMemory(ReadFully(typeof(Universe).Assembly.GetManifestResourceStream($"UniverseLib.Resources.{id}.bundle")));
-            if (bundle)
+            try
             {
-                Universe.Log($"Loaded {id} bundle for Unity {Application.unityVersion}");
-            }
+                var bundle = AssetBundle.LoadFromMemory(ReadFully(typeof(Universe).Assembly.GetManifestResourceStream($"UnityExplorerForLobotomyCorporation.UniverseLib.Resources.{id}.bundle")));
+                if (bundle)
+                {
+                    Universe.Log($"Loaded {id} bundle for Unity {Application.unityVersion}");
+                }
 
-            return bundle;
+                return bundle;
+            }
+            catch (Exception e)
+            {
+                Debug.Log($"Exception loading AssetBundle: {id}");
+                Debug.LogException(e);
+
+                throw;
+            }
         }
 
         private static byte[] ReadFully(Stream input)

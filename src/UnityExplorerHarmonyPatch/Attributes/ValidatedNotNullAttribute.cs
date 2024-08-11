@@ -6,7 +6,7 @@ using System;
 
 #endregion
 
-namespace UnityExplorerForLobotomyCorporation.Attributes
+namespace UnityExplorerHarmonyPatch.Attributes
 {
     [AttributeUsage(AttributeTargets.Parameter)]
     public sealed class ValidatedNotNullAttribute : Attribute

@@ -2,9 +2,9 @@
 
 using System;
 using JetBrains.Annotations;
-using UnityExplorerForLobotomyCorporation.Attributes;
+using UnityExplorerHarmonyPatch.Attributes;
 
-namespace UnityExplorerForLobotomyCorporation.Extensions
+namespace UnityExplorerHarmonyPatch.Extensions
 {
     public static class GuardExtensions
     {

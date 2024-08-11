@@ -8,6 +8,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityExplorerForLobotomyCorporation.UniverseLib.Runtime;
 using UnityExplorerForLobotomyCorporation.UniverseLib.Utility;
+using Debug = UnityEngine.Debug;
 
 namespace UnityExplorerForLobotomyCorporation.UniverseLib.Reflection
 {
@@ -114,31 +115,39 @@ namespace UnityExplorerForLobotomyCorporation.UniverseLib.Reflection
 
         internal static void CacheTypes(Assembly asm)
         {
-            foreach (var type in asm.GetTypes())
+            try
             {
-                // Cache namespace if there is one
-                if (!string.IsNullOrEmpty(type.Namespace) && !uniqueNamespaces.Contains(type.Namespace))
+                foreach (var type in asm.GetTypes())
                 {
-                    uniqueNamespaces.Add(type.Namespace);
-                    var i = 0;
-                    while (i < AllNamespaces.Count)
+                    // Cache namespace if there is one
+                    if (!string.IsNullOrEmpty(type.Namespace) && !uniqueNamespaces.Contains(type.Namespace))
                     {
-                        if (type.Namespace.CompareTo(AllNamespaces[i]) < 0)
+                        uniqueNamespaces.Add(type.Namespace);
+                        var i = 0;
+                        while (i < AllNamespaces.Count)
                         {
-                            break;
+                            if (type.Namespace.CompareTo(AllNamespaces[i]) < 0)
+                            {
+                                break;
+                            }
+
+                            i++;
                         }
 
-                        i++;
+                        AllNamespaces.Insert(i, type.Namespace);
                     }
 
-                    AllNamespaces.Insert(i, type.Namespace);
+                    // Cache the type. Overwrite type if one exists with the full name
+                    AllTypes[type.FullName] = type;
+
+                    // Invoke listener
+                    OnTypeLoaded?.Invoke(type);
                 }
-
-                // Cache the type. Overwrite type if one exists with the full name
-                AllTypes[type.FullName] = type;
-
-                // Invoke listener
-                OnTypeLoaded?.Invoke(type);
+            }
+            catch (ReflectionTypeLoadException e)
+            {
+                Debug.Log("Error loading types from assembly: " + asm.FullName);
+                Debug.LogException(e);
             }
         }
 

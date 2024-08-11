@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityExplorerForLobotomyCorporation", "UnityExplorerForLobotomyCorporation.csproj", "{B21DBDE3-5D6F-4726-93AB-CC3CC68BAE7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnityExplorerForLobotomyCorporation", "UnityExplorer\UnityExplorerForLobotomyCorporation.csproj", "{B21DBDE3-5D6F-4726-93AB-CC3CC68BAE7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityExplorerHarmonyPatch", "UnityExplorerHarmonyPatch\UnityExplorerHarmonyPatch.csproj", "{687E0B53-8392-46B0-89F9-3CDF7C88138D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,6 +14,10 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B21DBDE3-5D6F-4726-93AB-CC3CC68BAE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B21DBDE3-5D6F-4726-93AB-CC3CC68BAE7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8F2423-560D-43B7-A234-7385563AADB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8F2423-560D-43B7-A234-7385563AADB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687E0B53-8392-46B0-89F9-3CDF7C88138D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687E0B53-8392-46B0-89F9-3CDF7C88138D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

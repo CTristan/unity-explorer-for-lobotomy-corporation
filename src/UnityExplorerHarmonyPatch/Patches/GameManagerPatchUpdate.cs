@@ -4,10 +4,11 @@ using System;
 using Harmony;
 using JetBrains.Annotations;
 using UnityEngine;
-using UnityExplorerForLobotomyCorporation.Extensions;
 using UnityExplorerForLobotomyCorporation.UnityExplorer.Loader.Standalone;
+using UnityExplorerHarmonyPatch.Extensions;
 
-namespace UnityExplorerForLobotomyCorporation.Patches
+#pragma warning disable CA1707
+namespace UnityExplorerHarmonyPatch.Patches
 {
     [HarmonyPatch(typeof(GameManager), nameof(PrivateMethods.GameManager.Update))]
     public static class GameManagerPatchUpdate
@@ -23,6 +24,7 @@ namespace UnityExplorerForLobotomyCorporation.Patches
                 return;
             }
 
+            Debug.Log("Creating Unity Explorer standalone instance...");
             ExplorerStandalone.CreateInstance();
             _initialLoad = false;
         }
