@@ -43,7 +43,7 @@ namespace UnityExplorerForLobotomyCorporation.UnityExplorer.UI.Widgets.UnityObje
             }
             else if (target.TryCast<Sprite>() is Sprite sprite)
             {
-                if (sprite.packingMode == SpritePackingMode.Tight)
+                if (sprite.packed && sprite.packingMode == SpritePackingMode.Tight)
                 {
                     texture = sprite.texture;
                 }
@@ -55,7 +55,7 @@ namespace UnityExplorerForLobotomyCorporation.UnityExplorer.UI.Widgets.UnityObje
             }
             else if (target.TryCast<Image>() is Image image)
             {
-                if (image.sprite.packingMode == SpritePackingMode.Tight)
+                if (image.sprite.packed && image.sprite.packingMode == SpritePackingMode.Tight)
                 {
                     texture = image.sprite.texture;
                 }
